@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.EmptyStackException;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -10,11 +12,17 @@ public class Main {
 
             int tmp = number[10];
 
+            //throw new ArrayIndexOutOfBoundsException();
+
             System.out.println(tmp);
 
         }catch(Exception e){
 
-            System.out.println("Some error");
+            if(e instanceof ArrayIndexOutOfBoundsException){
+                System.out.println("Array index problem");
+            }else{
+                System.out.println(e.getMessage());
+            }
 
         }
 
